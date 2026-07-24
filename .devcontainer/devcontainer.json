@@ -1,0 +1,14 @@
+{
+  // Boot from the prebaked image (public on ghcr): tooling is baked in, so a
+  // workspace opens ready instead of installing at start. GitHub injects the VS
+  // Code server + overrides the entrypoint, so the image's own entrypoint is
+  // ignored (harmless). Single source of the bake recipe is the private infra.
+  "name": "CodeAgent",
+  "image": "ghcr.io/edgar-durand/codeam-box:latest",
+  "remoteUser": "box",
+  "overrideCommand": true,
+  // postCreate (NOT onCreate): per-workspace setup runs when a codespace is
+  // CREATED from the prebuild — onCreate would be baked into the prebuild and
+  // never see the per-workspace values.
+  "postCreateCommand": "bash .devcontainer/on-create.sh"
+}
