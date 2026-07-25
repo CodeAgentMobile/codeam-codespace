@@ -1,4 +1,5 @@
 {
+  // prebuild-refresh: codeam-cli 2.61.39 (2026-07-25)
   // Boot from the prebaked image (public on ghcr): tooling is baked in, so a
   // workspace opens ready instead of installing at start. GitHub injects the VS
   // Code server + overrides the entrypoint (the image entrypoint is ignored).
