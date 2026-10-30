@@ -4,7 +4,7 @@
   // workspace opens ready instead of installing at start. GitHub injects the VS
   // Code server + overrides the entrypoint (the image entrypoint is ignored).
   "name": "CodeAgent",
-  "image": "ghcr.io/edgar-durand/codeam-box:latest",
+  "image": "ghcr.io/codeagentmobile/codeam-box:latest",
   "remoteUser": "box",
   "overrideCommand": true,
   // sshd: the deploy bootstrap connects over `gh codespace ssh`; node-slim-based
